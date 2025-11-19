@@ -6,7 +6,7 @@ import pickle
 import pandas as pd
 
 app=FastAPI()
-pickle_in = open(r"C:\Users\JISHAN AICH\PycharmProjects\Fastapi\.venv\classifier.pkl", "rb")
+pickle_in = open("classifier.pkl", "rb")
 classifier = pickle.load(pickle_in)
 
 @app.get("/")
@@ -33,4 +33,5 @@ def predict_banknote(data:BankNote):
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127 .0.0.1", port=8000)
+
 #uvicorn app:app --reload
